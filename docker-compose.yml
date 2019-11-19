@@ -1,0 +1,24 @@
+version: '2'
+services:
+  mysql:
+        image: mysql:8.0
+        container_name: ing-web-db
+        command: --default-authentication-plugin=mysql_native_password
+        volumes:
+          - ./mysql:/var/lib/mysql
+        restart: unless-stopped
+        environment:
+          - MYSQL_ROOT_PASSWORD=12345
+          - MYSQL_DATABASE=administracion
+        ports:
+          - "8082:3306"
+  website:
+    container_name: ing-web-php
+    build:
+      context: ./
+    volumes:
+      - ./app:/var/www/
+    ports:
+      - 8000:80
+    depends_on:
+      - mysql
