@@ -1,1 +1,14 @@
-Options -Indexes
+LoadModule rewrite_module modules/mod_rewrite.so
+AllowOverride All
+Options -Multiviews
+RewriteEngine On
+
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} ! -d
+RewriteCond %{REQUEST_FILENAME} ! -f
+
+RewriteRule ^(.+)$ index.php?url=$1 [QSA,L]
+
+
+
