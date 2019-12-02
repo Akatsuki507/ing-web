@@ -8,5 +8,5 @@ RUN a2enmod rewrite
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 RUN php composer-setup.php --install-dir=. --filename=composer
 RUN mv composer /usr/local/bin/
-COPY app/ /var/www/html/
+COPY app/ /var/www/
 EXPOSE 80
