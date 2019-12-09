@@ -6,8 +6,8 @@
     </head>
     <body>
         <?php
-            foreach ($datos as $dato) {
-                echo $dato["name"]."  -   ".$dato["cedula"];
+            foreach ($data['users'] as $user) {
+                echo $user["name"]."  -   ".$user["cedula"];
             }
         ?>
     </body>

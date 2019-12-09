@@ -12,10 +12,10 @@ class usuarios extends controller{
 	public function show($id = ''){
 		require_once("../app/models/usuario.php");
 		$user=new Usuario();
-		$datos=$user->where("id",$id);
+		$users=$user->where("id",$id);
 		 
 		//Llamada a la vista
-		require_once("../app/views/usuarios/show.phtml");
+		$this->view('usuarios/show', ['users' => $users]);
 	}
 }
 ?>
