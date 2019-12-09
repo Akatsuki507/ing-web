@@ -9,7 +9,7 @@ class Usuario{
         $this->usuarios=array();
     }
     public function all(){
-        $consulta=$this->db->query("select * from $table;");
+        $consulta=$this->db->query("select * from {$this->table};");
         while($filas=$consulta->fetch_assoc()){
             $this->usuarios[]=$filas;
         }
