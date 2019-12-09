@@ -1,11 +1,11 @@
 <?php
 class administrativos extends controller{
 	public function index(){
-		echo 'docentes/index';
+		echo 'administrativos/index';
 	}
 
 	public function show(){
-		echo 'docentes/show';
+		echo 'administrativos/show';
 	}
 }
 ?>
