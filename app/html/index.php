@@ -2,5 +2,5 @@
 
 require_once '../app/init.php';
 
-$app = new application;
+$app = new App;
 ?>
