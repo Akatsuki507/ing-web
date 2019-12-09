@@ -1,7 +1,7 @@
 <?php
 class usuarios extends controller{
-	public function index(){
-		echo 'usuarios/index';
+	public function index($name = ''){
+		echo $name;
 	}
 
 	public function show(){
