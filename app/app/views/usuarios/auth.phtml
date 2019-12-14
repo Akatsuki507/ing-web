@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Usuarios</title>
+        <?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
+    </head>
+    <body>
+        <?php include '/var/www/app/views/layouts/nav.php'; ?>
+        <?php
+            echo $data["nombre"]."<br/>";
+            echo $data["pass"]."<br/>";
+        ?>
+    </body>
+</html>

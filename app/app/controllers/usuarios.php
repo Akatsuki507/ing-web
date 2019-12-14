@@ -25,5 +25,14 @@ class usuarios extends controller{
 		//Llamada a la vista
 		$this->view('usuarios/login', []);
 	}
+
+	public function auth(){
+		$nombre = $_POST['nombre'];
+		$pass = $_POST['pass'];
+		require_once("../app/models/usuario.php");
+		$user=new Usuario();
+		//$verify=$user->verify($nombre,$pass);
+		$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass]);
+	}
 }
 ?>
