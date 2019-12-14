@@ -26,12 +26,24 @@ class usuarios extends controller{
 		$this->view('usuarios/login', []);
 	}
 
+	public function sign_up(){
+		 
+		//Llamada a la vista
+		$this->view('usuarios/sign_up', []);
+	}
+
 	public function auth(){
 		$nombre = $_POST['nombre'];
 		$pass = $_POST['pass'];
 		require_once("../app/models/usuario.php");
 		$user=new Usuario();
-		//$verify=$user->verify($nombre,$pass);
+		$verify=$user->verify($nombre,$pass);
+		if($verify){
+			header("Location: http://localhost:8000/usuarios/login");
+		}else{
+			header("Location: http://localhost:8000/usuarios/login");
+		}
+
 		$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass]);
 	}
 }
