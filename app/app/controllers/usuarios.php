@@ -26,6 +26,12 @@ class usuarios extends controller{
 		$this->view('usuarios/login', []);
 	}
 
+	public function sign_in(){
+		 
+		//Llamada a la vista
+		$this->view('usuarios/sign_in', []);
+	}
+
 	public function auth(){
 		$nombre = $_POST['nombre'];
 		$pass = $_POST['pass'];
