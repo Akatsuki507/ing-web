@@ -26,10 +26,10 @@ class usuarios extends controller{
 		$this->view('usuarios/login', []);
 	}
 
-	public function sign_in(){
+	public function sign_up(){
 		 
 		//Llamada a la vista
-		$this->view('usuarios/sign_in', []);
+		$this->view('usuarios/sign_up', []);
 	}
 
 	public function auth(){
