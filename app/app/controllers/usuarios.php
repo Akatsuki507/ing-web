@@ -31,7 +31,13 @@ class usuarios extends controller{
 		$pass = $_POST['pass'];
 		require_once("../app/models/usuario.php");
 		$user=new Usuario();
-		//$verify=$user->verify($nombre,$pass);
+		$verify=$user->verify($nombre,$pass);
+		if($verify){
+			header("Location: http://localhost:8000/usuarios/login");
+		}else{
+			header("Location: http://localhost:8000/usuarios/login");
+		}
+
 		$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass]);
 	}
 }
