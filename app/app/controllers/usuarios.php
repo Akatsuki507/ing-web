@@ -20,7 +20,7 @@ class usuarios extends controller{
 
 	public function edit($id = ''){
 		require_once("../app/models/usuario.php");
-		//llamada al modelo de usuarios
+		
 		$user=new Usuario();
 		$users=$user->where("id",$id);
 		 
