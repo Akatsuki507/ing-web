@@ -2,11 +2,48 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8" />
-        <title>Administrativos</title>
+        <title>administrativos_id</title>
         <?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
     </head>
     <body>
-    	<?php echo $data['contenido']; ?>
-    	<?php include '/var/www/app/views/layouts/nav.php'; ?>
+        <? include '/var/www/app/views/layouts/nav.php'; ?>
+        <div class="row justify-content-md-center">  
+                <div class="col-lg-3 col-md-6 mb-4 p-5">
+                    <div class="container" align="center">
+                        <img src="https://ayudawp.com/wp-content/uploads/2014/02/usuario-registrado.jpg"style="width:80px;height:80px"align="left">
+                        <h4 align="center">Usuario</h4>
+                    <br><br><br>
+                    </div>
+                    <form method="get" action="">
+                        <input type="search" name="" placeholder="Buscar Usuario">
+                        <input type="submit" value="Buscar" name="" class="btn btn-success"> 
+                    </form>
+                </div>
+        </div>
+
+        <div class="container p-3" align="center">
+            <div class="row justify-content-center d-flex">
+                <div class="col-10 border border-success">
+                    <table class="table ">
+                        <thead>
+                        </thead>
+                        <tbody>
+
+                                <?php
+                                    foreach ($data['administrativos'] as $admin) {
+                                        echo "<tr>";
+                                        echo "<td>".$admin["nombre"];
+                                        echo "<td>".$admin["cedula"];
+                                        echo "<td>"."<a href='#' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>ver</a>";
+                                        echo "<td>"."<a href='#' class='btn btn-danger justify-content-center d-flex' role='button' aria-pressed='true'>borrar</a>";
+                                    }
+                                ?>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
