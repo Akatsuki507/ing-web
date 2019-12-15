@@ -7,10 +7,39 @@
     </head>
     <body>
         <?php include '/var/www/app/views/layouts/nav.php'; ?>
-        <?php
-            foreach ($data['users'] as $user) {
-                echo $user["name"]."<br/>";
-            }
-        ?>
+        <div class="contqainer p-5" align="center">
+            <div class="row justify-content-center d-flex">
+                <div class="col-8">
+                    <table class="table">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            
+                                <?php
+                                    foreach ($data['users'] as $user) {
+                                        echo "<tr>";
+                                        echo "<td>".$user["name"];
+                                        echo "<td>".$user["cedula"];
+                                        if ($user["docentes_id"] == 0){
+                                            echo "<td>"."";
+                                        }else{
+                                            echo "<td>"."Docente";
+                                        }
+                                        if($user["administrativos_id"] == 0){
+                                            echo "<td>"."";
+                                        }else{
+                                            echo "<td>"."Administrativo";
+                                        }
+                                        echo "<td>"."<a href='#' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>ver</a>";
+                                        echo "<td>"."<a href='#' class='btn btn-danger justify-content-center d-flex' role='button' aria-pressed='true'>borrar</a>";
+                                    }
+                                ?>
+                            
+                    
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
