@@ -42,12 +42,12 @@
                                         if ($user["docentes_id"] == 0){
                                             echo "<td>"."";
                                         }else{
-                                            echo "<td>"."Docente";
+                                            echo "<td>"."<a href='http://localhost:8000/docentes/show/".$user["docentes_id"]."' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>Perfil Docente</a>";
                                         }
                                         if($user["administrativos_id"] == 0){
                                             echo "<td>"."";
                                         }else{
-                                            echo "<td>"."Administrativo";
+                                            echo "<td>"."<a href='http://localhost:8000/administrativos/show/".$user["administrativos_id"]."' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>Perfil Administrativo</a>";
                                         }
                                         echo "<td>"."<a href='http://localhost:8000/usuarios/show/".$user["id"]."' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>ver</a>";
                                         //echo "<td>"."<a href='#' class='btn btn-danger justify-content-center d-flex' role='button' aria-pressed='true'>borrar</a>"; //no creemos que estos datos se deban borrar pero por si acaso lo dejaremos aqui
