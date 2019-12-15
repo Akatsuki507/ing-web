@@ -6,7 +6,8 @@ class controller{
 	}
 
 	public function autenticate(){
-		if ($_SESSION["newsession"] == "") {
+		$contenido = $_COOKIE["sesion"]; 
+		if (is_null($contenido) == true) {
 			header("Location: http://localhost:8000/usuarios/login");
 			exit;
 		}
