@@ -7,6 +7,15 @@ class Usuario extends Model{
         $this->usuarios=array();
     }
 
+    public function new($name,$cedula, $password){
+        $consulta=$this->db->query("insert into{$this->table}(name,cedula,password) values ($name,$cedula, $password);");
+        while($filas=$consulta->fetch_assoc()){
+            $this->rows[]=$filas;
+        }
+
+        return true;
+    }
+
     public function verify($user, $password){
         $consulta=$this->db->query("select * from {$this->table} where cedula = $user AND password = $password;");
         while($filas=$consulta->fetch_assoc()){
