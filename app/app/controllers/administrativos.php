@@ -4,13 +4,17 @@ class administrativos extends controller{
 		require_once '../app/models/administrativo.php';
 		$administrativo=new Administrativo();
 		$administrativo=$administrativo->all();
-		echo 'administrativos/index';
 		$this->view('administrativos/index', ['administrativos' => $administrativo]);
 	}
 
-	public function show(){
+	public function show($id = ''){
+		require_once("../app/models/administrativo.php");
 		$this->autenticate();
-		$this->view('administrativos/show', []);
+		$administrativo=new Administrativo();
+		$administrativo=$administrativo->where("id",$id);
+		 
+		//Llamada a la vista
+		$this->view('administrativos/show', ['administrativo' => $administrativo]);
 	}
 	
 	public function edit($id = ''){
