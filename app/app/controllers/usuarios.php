@@ -33,14 +33,14 @@ class usuarios extends controller{
 	}
 
 	public function auth(){
-		$nombre = $_POST['nombre'];
-		$pass = $_POST['pass'];
+		$nombre = "'".$_POST['nombre']."'";
+		$pass = "'".$_POST['pass']."'";
 		require_once("../app/models/usuario.php");
 		$user=new Usuario();
 		$verify=$user->verify($nombre,$pass);
 		if($verify){
 			$current_user = $user->get_current_user($nombre,$pass);
-			$id = strval($current_user["id"]);
+			$id = $current_user["id"];
 			setcookie("sesion", "sesion",time() + 10, "/");
 			$galleta = $_COOKIE["sesion"]; 
 			echo "if";
