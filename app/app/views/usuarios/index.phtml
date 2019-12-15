@@ -7,10 +7,24 @@
     </head>
     <body>
         <?php include '/var/www/app/views/layouts/nav.php'; ?>
-        <div class="contqainer p-5" align="center">
+        <div class="row justify-content-md-center">  
+                <div class="col-lg-3 col-md-6 mb-4 p-5">
+                    <div class="container" align="center">
+                        <img src="https://ayudawp.com/wp-content/uploads/2014/02/usuario-registrado.jpg"style="width:80px;height:80px"align="left">
+                        <h4 align="center">Usuario</h4>
+                    <br><br><br>
+                    </div>
+                    <form method="get" action="">
+                        <input type="search" name="" placeholder="Buscar Usuario">
+                        <input type="submit" value="Buscar" name="" class="btn btn-success"> 
+                    </form>
+                </div>
+        </div>
+             
+        <div class="container p-3" align="center">
             <div class="row justify-content-center d-flex">
-                <div class="col-8">
-                    <table class="table">
+                <div class="col-10 border border-success">
+                    <table class="table ">
                         <thead>
                         </thead>
                         <tbody>
@@ -20,7 +34,6 @@
                                         echo "<tr>";
                                         echo "<td>".$user["name"];
                                         echo "<td>".$user["cedula"];
-                                        echo "<td>".$user["docentes_id"];
                                         if ($user["docentes_id"] == 0){
                                             echo "<td>"."";
                                         }else{
