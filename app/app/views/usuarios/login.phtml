@@ -1,13 +1,3 @@
-<?php 
-    if(isset($_POST['submit'])){
-    $nombre= $_POST['nombre'];
-    $pass= $_POST['password'];
-
-    echo $nombre;
-    echo $password;
-    }
-
-?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -52,6 +42,8 @@
                             <input type="password" name="pass" placeholder="Ingrese su Contraseña" class="form-control">
                             <br><br>
                             <input type="submit" value="Validar" name="submit" class="btn btn-success">
+                            <br><br>
+                            <p>No tienes cuenta? <a href="http://localhost:8000/usuarios/sign_up">Crea una.</a></p>
                         </form> 
                     </div>
                 </div>
