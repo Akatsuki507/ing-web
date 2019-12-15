@@ -2,7 +2,8 @@
 class administrativos extends controller{
 	public function index(){
 		$this->autenticate();
-		$this->view('administrativos/index', []);
+		$contenido = $_COOKIE["sesion"];
+		$this->view('administrativos/index', ['contenido' => $contenido]);
 	}
 
 	public function show(){
