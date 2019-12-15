@@ -16,15 +16,6 @@
         <?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
     </head>
     <body>
-        <br>
-            <img src="http://www.utp.ac.pa/documentos/2015/imagen/logo_utp_1_300.jpg" style="width:150px;height:150px">
-
-            <img src="https://pbs.twimg.com/profile_images/1099046790463193093/nb9L_nav_400x400.png" style="width:150px;height:150px;" align="right">
-            <br>
-            <fieldset>
-                <legend><h2 style="text-align:center;color: #709e07">Universidad Tecnológica de Panamá</h2></legend>
-                <legend><h2 style="text-align:center; color: #709e07">Control de perfil de la FISC</h2></legend><br><br>
-
         <div class="container">
               <div class="row justify-content-center">
                         <div class="col-3" align="center">
@@ -56,11 +47,11 @@
                         <form action="http://localhost:8000/usuarios/auth"  method="post">
                             <label>Número de Cédula</label>
                             <input type="text" name="nombre" placeholder="Ej. #-###-###" class="form-control">
-<br>
-<br>
+                            <br><br>
                             <label>Contraseña:</label>
                             <input type="password" name="pass" placeholder="Ingrese su Contraseña" class="form-control">
-<br><br>                          <input type="submit" value="Validar" name="submit" class="btn btn-success">
+                            <br><br>
+                            <input type="submit" value="Validar" name="submit" class="btn btn-success">
                         </form> 
                     </div>
                 </div>

@@ -39,9 +39,14 @@ class usuarios extends controller{
 		$user=new Usuario();
 		$verify=$user->verify($nombre,$pass);
 		if($verify){
-			header("Location: http://localhost:8000/usuarios/login");
+			//$user->get_current_user($nombre,$pass);
+			$_SESSION["newsession"] = $nombre;
+
+			echo "if";
+			$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass]);
 		}else{
 			header("Location: http://localhost:8000/usuarios/login");
+			echo "else";
 		}
 
 		$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass]);
