@@ -26,6 +26,13 @@ class usuarios extends controller{
 		$this->view('usuarios/login', []);
 	}
 
+	public function logout(){
+		setcookie("id_user_sesion_kawaii", "sesion off",time() - 120, "/");
+		header("Location: http://localhost:8000/usuarios/login");
+		//Llamada a la vista
+		$this->view('usuarios/login', []);
+	}
+
 	public function sign_up(){
 		 
 		//Llamada a la vista
@@ -40,9 +47,9 @@ class usuarios extends controller{
 		$verify=$user->verify($nombre,$pass);
 		if($verify){
 			$current_user = $user->get_current_user($nombre,$pass);
-			$id = $current_user["id"];
-			setcookie("sesion", "sesion",time() + 10, "/");
-			$galleta = $_COOKIE["sesion"]; 
+			$id = strval($current_user[0]["id"]);
+			setcookie("id_user_sesion_kawaii", $id,time() + 120, "/");
+			$galleta = $_COOKIE["id_user_sesion_kawaii"]; 
 			echo "if";
 			echo $id;
 			$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass, 'current_user' => $id, 'galleta' => $galleta]);
