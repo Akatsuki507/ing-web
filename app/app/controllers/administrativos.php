@@ -1,8 +1,12 @@
 <?php
 class administrativos extends controller{
 	public function index(){
+		require_once '../app/models/administrativo.php';
+		$administrativo=new Administrativo();
+		$administrativo=$administrativo->all();
 		echo 'administrativos/index';
-		$this->view('administrativos/index', []);
+
+		$this->view('administrativos/index', ['administrativos' => $administrativo]);
 	}
 
 	public function show(){

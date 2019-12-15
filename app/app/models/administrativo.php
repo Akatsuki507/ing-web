@@ -1,6 +1,6 @@
 <?php
-class Administrativo{
-    protected $table = "docentes";
+class Administrativo extends Model{
+    protected $table = "administrativos";
  
     public function __construct(){
         $this->db=Conectar::conexion();
