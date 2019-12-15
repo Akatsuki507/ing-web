@@ -6,8 +6,8 @@ class App{
 	protected $params = [];
 	public function __construct(){
 		$url = $this->parseUrl();
-
 		$this->default($url);
+		
 	}
 
 	public function parseUrl(){
