@@ -1,10 +1,336 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Administrativos</title>
-        <?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
-    </head>
-    <body>
-    </body>
+<head>
+	<meta charset="UTF-8" />
+	<title>Docentes</title>
+	<?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="custom.css">
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">Gestión de Perfiles</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+	</nav>
+
+
+  <div class="container">
+
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+
+      <h1 class="display-3" align="center">Actualizacion de la Informacion Administrativo</h1>
+
+    </header>
+
+
+    <!-- Page Features -->
+    <div class="row justify-content-md-center"> 
+      <form action="mailto:tu@direccion.es" method="post" enctype="text/plain">
+        <center><table bgcolor="#cccccc" border="0" cellpadding="6"
+          cellspacing="0" width="400">
+          <tr align="center">
+            <th colspan="3" style="color: Green"><h2>Informacion general del Administrativo</h2></th>
+          </tr>
+          <tr align="center">
+            <th ><h3>Datos</h3></th>
+            <th ><h3>Informacion Actuales</h3></th>
+            <th ><h3>Actualizar informacion</h3></th>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Nombre Completo</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['nombre']}" readonly></td>
+            <td><input type="text" size="25" name="nombre"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Cedula</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['cedula']}" readonly></td>
+            <td><input type="number" size="30" name="cedula" disabled> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Fecha de Nacimiento</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['fecha_nacimiento']}" readonly></td>
+            <td><input type="Date" size="30" name="fecha_nacimiento" disabled> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Genero</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['genero']}" readonly></td>
+            <td><select name="genero">
+              <option>Femenino</option>
+              <option>Masculino</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Estado civil</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['estado_civil']}" readonly></td>
+            <td><select name="estado_civil">
+              <option>Soltero</option>
+              <option>Casado</option>
+              <option>Viudo</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Tipo de sangre</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['tipo_sangre']}" readonly></td>
+            <td><input type="text" size="25" name="tipo_sangre"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Peso</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['peso']}" readonly></td>
+            <td><input type="number" size="25" name="peso"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Estatura</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['estatura']}" readonly></td>
+            <td><input type="text" size="25" name="estatura"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Direccion(provincia)</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['provincia']}" readonly></td>
+            <td><select name="provincia">
+              <option>Bocas del Toro</option>
+              <option>Cocle</option>
+              <option>Colón</option>
+              <option>Chiriquí</option>
+              <option>Darien</option>
+              <option>Herrea</option>
+              <option>Los Santos</option>
+              <option>Panamá</option>
+              <option>Veraguas</option>
+              <option>Panamá Oeste</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Direccion(distrito)</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['distrito']}" readonly></td>
+            <td><select name="distrito">
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Direccion(corregimiento)</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['corregimiento']}" readonly></td>
+            <td><select name="corregimiento">
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+              <option></option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Direccion</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['direccion']}" readonly></td>
+            <td><input type="text" size="25" name="direccion"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Telefono</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['telefono']}" readonly></td>
+            <td><input type="number" size="25" name="telefono"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Correro</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['correo']}" readonly></td>
+            <td><input type="email" size="25" name="correo"> </td>
+          </tr>
+
+          <tr>
+            <td align="right" valign="top"><b>Categoria del docente</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['categoria']}" readonly></td>
+            <td><select name="categoria">
+              <option>Tiempo completo</option>
+              <option>MTiempo parcial</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Ubicacion(sede)</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['sede']}" readonly></td>
+            <td><select name="sede">
+              <option>Azuero</option>
+              <option>Bocas Del Toro</option>
+              <option>Chiriqui</option>
+              <option>Cocle</option>
+              <option>Colon</option>
+              <option>Panamá Oeste</option>
+              <option>Veraguas</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Departamento</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['departamento']}" readonly></td>
+            <td><select name="departamento">
+              <option>No Definido</option>
+              <option>Arquitectura y Redes de Computadoras</option>
+              <option>Computación y Simulación de Sistemas</option>
+              <option>Ingeniería de Software</option>
+              <option>Programación de Computadoras</option>
+              <option>Sistemas de Información, Control y Evaluación de Recursos Informáticos</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Cargo Administrativo</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo administrativo['cargo']}" readonly></td>
+            <td><select name="cargo">
+              <option>Sin cargo</option>
+              <option>Decano</option>
+              <option>Vicedecano</option>
+              <option>Jefe de Departamento</option>
+              <option>Coordinador de Carrera</option>
+              <option>Coordinador de FISC en Centro Regional</option>
+              <option>Coordinador de Extensión</option>
+              <option>Coordinador de Postgrado</option>
+              <option>Coordinador de Investigación</option>
+              <option>Director de Centro Regional</option>
+              <option>Subdirector Académico de Centro Regional</option>
+              <option>Subdirector de investigación, postgrado y extensión de Centro Regiona</option>
+              <option>Subdirector Administrativo de Centro Regional</option>
+              <option>Coordinador de Extensión en Centro Regional</option>
+              <option>Coordinador de Postgrado en Centro Regional</option>
+              <option>Coordinador de Investigación en Centro Regional</option>
+            </select></td>
+          <tr>
+              <td align="right" valign="top"><b>Representación ante órganos de gobierno </b></td>
+              <td><input type="text" name="texto" size="25" value="{echo administrativo['representante_gobierno']}" readonly></td>
+              <td><select name="representante_gobierno">
+              <option>Ninguno</option>
+              <option>Junta de Facultad</option>
+              <option>Consejo General</option>
+              <option>Consejo Académico</option>
+              <option>Consejo de Investigación</option>
+              <option>Consejo Administrativo</option>
+            </select></td>
+            </tr>
+            <tr>
+              <td align="right" valign="top"><b>Unidad</b></td>
+              <td><input type="text" name="texto" size="25" value="{echo administrativo['unidad']}" readonly></td>
+              <td><select name="unidad">
+              <option>Facultad de Sistemas Computacionales</option>
+              <option>Facultad de Ingenieria Mecanica</option>
+              <option>Facultad de Ingenieria Civil</option>
+              <option>Facultad de Ingnieria Electrica</option>
+              <option>Facultad de Sistemas</option>
+              <option>Facultad de Ciencias y Tecnologia</option>
+              <option>Facultad de Ingnieria Industrial</option>
+            </select></td>
+            </tr>
+          <!-- /tabla 1 -->
+
+
+          <tr align="center">
+            <th colspan="3" style="color: Green"><h2>Informacion Familiar</h2></th>
+          </tr>
+          <tr align="center">
+            <th ><h3>Datos</h3></th>
+            <th ><h3>Informacion Actuales</h3></th>
+            <th ><h3>Actualizar informacion</h3></th>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Nombre y apellido</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo familia_administrativo['IFNombre']}" readonly></td>
+            <td><input type="text" size="25" name="IFNombre"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Fecha de nacimiento(requiere si es hijo)</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo familia_administrativo['fecha_nacimiento']}" readonly></td>
+            <td><input type="number" size="25" name="fecha_nacimiento"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>¿Localizar en caso de emergancia?</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo familia_administrativo['localizar_emergiencia']}" readonly></td>
+            <td><select name="localizar_emergiencia">
+              <option>Si</option>
+              <option>No</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Prioridad de localizar en caso de emergencia</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo familia_administrativo['prioridad_emergencia']}" readonly></td>
+            <td><input type="number" size="25" name="prioridad_emergencia"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Telefono de oficina</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo familia_administrativo['telefono']}" readonly></td>
+            <td><input type="number" size="25" name="telefono"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Correo electronico</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo familia_administrativo['correo']}" readonly></td>
+            <td><input type="number" size="25" name="correo"> </td>
+          </tr>
+          <!-- /.tabla 2 -->
+          <tr align="center">
+            <th colspan="3" style="color: Green"><h2>Preparacion academica del Administrativo</h2></th>
+          </tr>
+          <tr align="center">
+            <th ><h3>Datos</h3></th>
+            <th ><h3>Informacion Actuales</h3></th>
+            <th ><h3>Actualizar informacion</h3></th>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Nombre de los titulos</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo preparacion_administrativo['nombre']}" readonly></td>
+            <td><input type="text" size="25" name="nombre"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Grado</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo preparacion_administrativo['grado']}" readonly></td>
+            <td><input type="text" size="25" name="grado"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Año</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo preparacion_administrativo['year']}" readonly></td>
+            <td><input type="Date" size="25" name="year"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Institucion</b></td>
+            <td><input type="text" name="texto" size="25" value="{echo preparacion_administrativo['universidad']}" readonly></td>
+            <td><input type="text" size="25" name="universidad"> </td>
+          </tr>
+          <tr>
+            <td align="right" valign="top"><b>Guardar</b>&nbsp; <b>&gt;</b> </td>
+            <td align="center">&nbsp; <input type="submit" name="Enviar datos" value=" Guardar "><input type="reset" value="Borrar" name="B1"> </td>
+            </tr>
+
+          </table>
+        </center>
+      </form>
+    </div>
+    <!-- /.row -->
+<br>
+  </div>
+	<!-- /.container -->
+
+	<!-- Footer -->
+	<footer class="py-4 bg-success">  
+		<div class="container">
+			<p class="m-0 text-center text-white">Copyright &copy; Universidad Tecnológica de Panamá</p>
+		</div>
+		<!-- /.container -->
+	</footer>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
 </html>
