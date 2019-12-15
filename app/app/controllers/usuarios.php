@@ -39,6 +39,17 @@ class usuarios extends controller{
 		$this->view('usuarios/sign_up', []);
 	}
 
+	public function create(){
+		$nombre = "'".$_POST['nombre']."'";
+		$cedula = "'".$_POST['cedula']."'";
+		$pass = "'".$_POST['pass']."'";
+		require_once("../app/models/usuario.php");
+		$user=new Usuario();
+
+		//Llamada a la vista
+		$this->view('usuarios/sign_up', []);
+	}
+
 	public function auth(){
 		$nombre = "'".$_POST['nombre']."'";
 		$pass = "'".$_POST['pass']."'";
