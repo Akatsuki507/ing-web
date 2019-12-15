@@ -15,7 +15,7 @@
         <a class="nav-link" href="http://localhost:8000/administrativos">administrativos</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="http://localhost:8000/usuarios/logout" tabindex="-1" aria-disabled="true">Logout</a>
+        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
       </li>
     </ul>
   </div>
