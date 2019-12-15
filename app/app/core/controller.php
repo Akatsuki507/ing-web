@@ -8,8 +8,9 @@ class controller{
 	public function autenticate(){
 		$contenido = $_COOKIE["id_user_sesion_kawaii"]; 
 		if($contenido == null) {
-			header("Location: http://localhost:8000/usuarios/login");
-			exit;
+			//uncomment para usar login
+			//header("Location: http://localhost:8000/usuarios/login");
+			//exit;
 		}
 		
 	}
