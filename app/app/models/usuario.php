@@ -9,10 +9,6 @@ class Usuario extends Model{
 
     public function new($name,$cedula, $password){
         $consulta=$this->db->query("insert into{$this->table}(name,cedula,password) values ($name,$cedula, $password);");
-        while($filas=$consulta->fetch_assoc()){
-            $this->rows[]=$filas;
-        }
-
         return true;
     }
 
