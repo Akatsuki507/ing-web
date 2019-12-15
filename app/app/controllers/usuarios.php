@@ -45,11 +45,14 @@ class usuarios extends controller{
 		$pass = "'".$_POST['pass']."'";
 		require_once("../app/models/usuario.php");
 		$user=new Usuario();
-		$user->new($nombre,$cedula,$pass);
-		$current_user = $user->get_current_user($cedula,$pass);
-		$id = strval($current_user[0]["id"]);
-		setcookie("id_user_sesion_kawaii", $id,time() + 120, "/");
-		header("Location: http://localhost:8000/usuarios/login");
+		if($user->new($nombre,$cedula,$pass)){
+			$current_user = $user->get_current_user($cedula,$pass);
+			$id = strval($current_user[0]["id"]);
+			setcookie("id_user_sesion_kawaii", $id,time() + 120, "/");
+			header("Location: http://localhost:8000/");
+			exit;
+		}
+
 		//Llamada a la vista
 		$this->view('usuarios/sign_up', []);
 	}

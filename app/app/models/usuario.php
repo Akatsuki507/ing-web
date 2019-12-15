@@ -8,7 +8,7 @@ class Usuario extends Model{
     }
 
     public function new($name,$cedula, $password){
-        $consulta=$this->db->query("insert into{$this->table}(name,cedula,password) values ($name,$cedula, $password);");
+        $consulta=$this->db->query("insert into {$this->table}(name,cedula,password) values ($name,$cedula, $password);");
         return true;
     }
 
@@ -25,8 +25,8 @@ class Usuario extends Model{
         }  
     }
 
-    public function get_current_user($user, $password){
-        $consulta=$this->db->query("select * from {$this->table} where cedula = $user AND password = $password;");
+    public function get_current_user($cedula, $password){
+        $consulta=$this->db->query("select * from {$this->table} where cedula = $cedula AND password = $password;");
         while($filas=$consulta->fetch_assoc()){
             $this->rows[]=$filas;
         }
