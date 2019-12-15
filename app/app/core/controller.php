@@ -7,7 +7,7 @@ class controller{
 
 	public function autenticate(){
 		$contenido = $_COOKIE["sesion"]; 
-		if (is_null($contenido) == true) {
+		if ($contenido =! "hay sesion") {
 			header("Location: http://localhost:8000/usuarios/login");
 			exit;
 		}

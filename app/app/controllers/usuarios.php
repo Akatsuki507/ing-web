@@ -40,7 +40,8 @@ class usuarios extends controller{
 		$verify=$user->verify($nombre,$pass);
 		if($verify){
 			$current_user = $user->get_current_user($nombre,$pass);
-			setcookie("sesion",$current_user["id"],time() + 60);
+			$current_user = $current_user["id"];
+			setcookie("sesion","hay sesion",time() + 60);
 			$galleta = $_COOKIE["sesion"]; 
 			echo "if";
 			$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass, 'current_user' => $current_user, 'galleta' => $galleta]);
