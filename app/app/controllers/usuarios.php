@@ -39,8 +39,8 @@ class usuarios extends controller{
 		$user=new Usuario();
 		$verify=$user->verify($nombre,$pass);
 		if($verify){
-			//$user->get_current_user($nombre,$pass);
-			$_SESSION["newsession"] = $nombre;
+			$current_user = $user->get_current_user($nombre,$pass);
+			setcookie("sesion",$current_user,time() + 60);
 
 			echo "if";
 			$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass]);
