@@ -8,20 +8,20 @@ class Usuario extends Model{
     }
 
     public function verify($user, $password){
-        $consulta=$this->db->query("select * from {$this->table} where cedula = $user and password = ".$password.";");
+        $consulta=$this->db->query("select * from {$this->table} where cedula = $user AND password = $password;");
         while($filas=$consulta->fetch_assoc()){
             $this->rows[]=$filas;
         }
 
         if(empty($this->rows)){
-        	return true;
-        }else{
         	return false;
+        }else{
+        	return true;
         }  
     }
 
     public function get_current_user($user, $password){
-        $consulta=$this->db->query("select * from {$this->table} where cedula = $user and password = ".$password.";");
+        $consulta=$this->db->query("select * from {$this->table} where cedula = $user AND password = $password;");
         while($filas=$consulta->fetch_assoc()){
             $this->rows[]=$filas;
         }

@@ -40,11 +40,12 @@ class usuarios extends controller{
 		$verify=$user->verify($nombre,$pass);
 		if($verify){
 			$current_user = $user->get_current_user($nombre,$pass);
-			$current_user = strval($current_user["id"]);
-			setcookie("sesion","sesion",time() + 30, "/");
+			$id = strval($current_user["id"]);
+			setcookie("sesion", "sesion",time() + 10, "/");
 			$galleta = $_COOKIE["sesion"]; 
 			echo "if";
-			$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass, 'current_user' => $current_user, 'galleta' => $galleta]);
+			echo $id;
+			$this->view('usuarios/auth', ['nombre' => $nombre, 'pass' => $pass, 'current_user' => $id, 'galleta' => $galleta]);
 		}else{
 			header("Location: http://localhost:8000/usuarios/login");
 			echo "else";
