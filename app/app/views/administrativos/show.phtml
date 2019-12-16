@@ -274,18 +274,18 @@
           <div class="modal-body">
             <form action="http://localhost:8000/administrativos/add_titulo" method="post">
             	<label>Titulo</label>
-                <input type="text" name="titulo" class="form-control">
+                <input type="text" name="titulo" class="form-control" required="true">
 
                 <label>Anho</label>
-                <input type="text" name="year" class="form-control">
+                <input type="text" name="year" class="form-control" required="true">
 
                 <label>Institucion</label>
-                <input type="text" name="universidad" class="form-control">
+                <input type="text" name="universidad" class="form-control" required="true">
 
                 <label>Grado</label>
-                <input type="text" name="grado" class="form-control">
+                <input type="text" name="grado" class="form-control" required="true">
 
-                <input type="hidden" name="administrativos_id" value=<?php echo '"'.$data['administrativo']['id'].'"';?>>
+                <input type="hidden" name="administrativos_id" required="true" value=<?php echo '"'.$data['administrativo']['id'].'"';?>>
 
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
