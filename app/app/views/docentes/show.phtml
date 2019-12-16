@@ -142,23 +142,29 @@
                     
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-7">
                 <div class="col-12">
                     <div class="card table-sm">
                         <div class="card-header">
-                            <h5 class="card-tittle my-2">Perfiles</h5>
+                            <h5 class="card-tittle my-2">Preparacion academica</h5>
                         </div>
                         <div class="table-responsive">
                             <table class="table table-striped">
+                            	<thead>
+                            		<th>Titulo</th>
+                            		<th>Anho</th>
+                            		<th>Institucion</th>
+                            		<th>Grado</th>
+                            	</thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Nombre completo</td>
-                                        <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Cedula</td>
-                                        <td><?php echo ($data["users"]["administrativos_id"]) ? "<a href='http://localhost:8000/administrativos/show/".$data["users"]["docentes_id"]."'>Ver perfil Administrativo</a>" : "<a href='#' data-toggle='modal' data-target='#new_administrativo'>No tiene perfil Administrativo <i class='fas fa-user-plus'></i></a>";?></td>
-                                    </tr>
+                                    <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?>
+                                    </td>
+                                    <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?>
+                                    </td>
+                                    <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?>
+                                    </td>
+                                    <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?>
+                                    </td>
                                 </tbody>
                                 
                             </table>
