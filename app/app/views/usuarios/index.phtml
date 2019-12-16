@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <!--La "cabeza" de la pagina, es su titulo, el php incluido es para que incluya detalles del boostrap  -->
         <meta charset="UTF-8" />
         <title>Usuarios</title>
         <?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
+
+        <!--Estos links y scripts permiten que la apariencia de la cabeza de la pagina, sea mas adecuada -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="custom.css">
         <script src="https://kit.fontawesome.com/d1fbf856e0.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <!--El navbar, es como el menu principal que sale en todas las paginas, entonces se usa para que se pueda navegar en la aplicacion mas facilmente, se le conecta con el localhost -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top mb-5">
             <a class="navbar-brand" href="http://localhost:8000/"><i class="fas fa-arrow-left fa-2x"></i></a>
-            <div class="container">
 
+            <!--Para un mejor control, creamos el cuerpo a base de contenedores, que a su vez se dividen en otras secciones (row y column), tambien aparece navbar y tiene la misma funcion que la antes mencionada-->
+            <div class="container">
                 <a class="navbar-brand" href="http://localhost:8000/">Gestión de Perfiles</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,6 +37,7 @@
                         <div class="card-header">
                             <h5 class="card-tittle my-2">Usuarios</h5>
                         </div>
+                        <!--Por razones de comodidad, mostramos los datos en forma de tablas -->
                         <table class="table table-striped">
                             <thead>
                             </thead>
