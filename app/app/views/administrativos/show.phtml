@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8" />
-	<title>Docentes</title>
+	<title>Administrativo</title>
 	<?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="custom.css">
@@ -163,7 +163,6 @@
 		                                		<td>'.$titulo["year"].'</td>
 		                                		<td>'.$titulo["universidad"].'</td>
 		                                		<td>'.$titulo["grado"].'</td>
-		                                		<td>'.$titulo["docentes_id"].'</td>
 	                                		';
 	                                	} 
 	                                	?>
@@ -283,7 +282,7 @@
 	            </button>
 	          </div>
 	          <div class="modal-body">
-	            <form action="http://localhost:8000/docentes/add_familiar" method="post">
+	            <form action="http://localhost:8000/administrativos/add_familiar" method="post">
 	            	<label>Nombre</label>
 	                <input type="text" name="nombre" class="form-control" required="true">
 
@@ -305,7 +304,7 @@
 	                <label>correo</label>
 	                <input type="text" name="correo" class="form-control" required="true">
 
-	                <input type="hidden" name="docente_id" required="true" value=<?php echo '"'.$data['docente']['id'].'"';?> >
+	                <input type="hidden" name="administrativo_id" required="true" value=<?php echo '"'.$data['administrativo']['id'].'"';?> >
 
 	                <div class="modal-footer">
 	                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

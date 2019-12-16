@@ -12,10 +12,11 @@ class administrativos extends controller{
 		$this->autenticate();
 		$administrativo=new Administrativo();
 		$titles= $administrativo->titulos($id);
+		$familiares= $administrativo->familiares($id);
 		$administrativos=$administrativo->where("id",$id);
 		$administrativos=$administrativos[0];
 		//Llamada a la vista
-		$this->view('administrativos/show', ['administrativo' => $administrativos, 'titles' => $titles]);
+		$this->view('administrativos/show', ['administrativo' => $administrativos, 'titles' => $titles, 'familiares' => $familiares]);
 	}
 	
 	public function edit($id = ''){
@@ -59,7 +60,27 @@ class administrativos extends controller{
 		$administrativo = strval($administrativos_id);
 		header("Location: http://localhost:8000/administrativos/show/$administrativos_id");
 		exit;
-		$this->view('docentes/index', []);
+		$this->view('administrativos/index', []);
+	}
+
+
+	public function add_familiar(){
+		$this->autenticate();
+		$nombre = "'".$_POST['nombre']."'";
+		$localizar_emergencia = "'".$_POST['localizar_emergencia']."'";
+		$prioridad_localizar = $_POST['prioridad_localizar'];
+		$parentesco = "'".$_POST['parentesco']."'";
+		$fecha_nacimiento = "'".$_POST['fecha_nacimiento']."'";
+		$telefono = "'".$_POST['telefono']."'";
+		$correo = "'".$_POST['correo']."'";
+		$administrativo_id = $_POST['administrativo_id'];
+		require_once("../app/models/administrativo.php");
+		$administrativo=new Administrativo();
+		$administrativo->new_familiar($nombre,$localizar_emergencia,$prioridad_localizar,$parentesco,$fecha_nacimiento,$telefono,$correo,$administrativo_id);
+		$administrativo_id = strval($administrativo_id);
+		header("Location: http://localhost:8000/administrativos/show/$administrativo_id");
+		exit;
+		$this->view('administrativos/index', []);
 	}
 }
 ?>

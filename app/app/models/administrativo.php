@@ -33,5 +33,20 @@ class Administrativo extends Model{
         }
         return $this->rows;
     }
+
+    public function new_familiar($nombre,$localizar_emergencia,$prioridad_localizar,$parentesco,$fecha_nacimiento,$telefono,$correo,$administrativos_id){
+        $this->rows = null;
+        $consulta=$this->db->query("insert into famila_administrativo (nombre ,localizar_emergencia , prioridad_localizar , parentesco , fecha_nacimiento , telefono , correo , administrativos_id) values ($nombre ,$localizar_emergencia ,$prioridad_localizar ,$parentesco ,$fecha_nacimiento ,$telefono , $correo, $administrativos_id);");
+        return true;
+    }
+
+    public function familiares($id){
+        $this->rows = null;
+        $consulta=$this->db->query("select * from famila_administrativo where administrativos_id = $id;");
+        while($filas=$consulta->fetch_assoc()){
+            $this->rows[]=$filas;
+        }
+        return $this->rows;
+    }
 }
 ?>
