@@ -8,9 +8,14 @@ class docentes extends controller{
 		$this->view('docentes/index', ['docente' => $docente]);
 	}
 
-	public function show(){
+	public function show($id = ''){
 		$this->autenticate();
-		$this->view('docentes/show', []);
+		require_once("../app/models/docente.php");
+		
+		$docente=new Docente();
+		$docentes=$docente->where("id",$id);
+		$docentes=$docentes[0];
+		$this->view('docentes/show', ['docente' => $docentes]);
 	}
 
 	public function edit($id = ''){

@@ -6,6 +6,7 @@
 	<?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="custom.css">
+	<script src="https://kit.fontawesome.com/d1fbf856e0.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -28,7 +29,69 @@
 
 		</header>
 
+    <div class="container">
 
+        <!-- Jumbotron Header -->
+        <header class="jumbotron my-4">
+
+            <h1 class="display-3" align="center">Perfil de Usuario</h1>
+
+        </header>
+
+        <div class="row">
+            <div class="col-12 justify-content-center d-flex">
+                    <i class="fas fa-user fa-10x border m-4 p-4"></i>
+                    
+            </div>
+            <div class="col-6">
+                <div class="card table-sm">
+                    <div class="card-header">
+                        <h5 class="card-tittle my-2">Informacion General</h5>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <td>Nombre completo</td>
+                                    <td><?php echo $data["docente"]["nombre"]; ?></td>
+                                </tr>
+                                <tr>
+                                    <td>Cedula</td>
+                                    <td><?php echo $data["docente"]["cedula"]; ?></td>
+                                </tr>
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="col-12">
+                    <div class="card table-sm">
+                        <div class="card-header">
+                            <h5 class="card-tittle my-2">Perfiles</h5>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                                <tbody>
+                                    <tr>
+                                        <td>Nombre completo</td>
+                                        <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cedula</td>
+                                        <td><?php echo ($data["users"]["administrativos_id"]) ? "<a href='http://localhost:8000/administrativos/show/".$data["users"]["docentes_id"]."'>Ver perfil Administrativo</a>" : "<a href='#' data-toggle='modal' data-target='#new_administrativo'>No tiene perfil Administrativo <i class='fas fa-user-plus'></i></a>";?></td>
+                                    </tr>
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
 		<!-- Page Features -->
 		<div class="row justify-content-md-center"> 
 			<form action="mailto:tu@direccion.es" method="post" enctype="text/plain">
