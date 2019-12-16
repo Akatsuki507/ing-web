@@ -70,7 +70,7 @@
                                 <tbody>
                                     <tr>
                                         <td>Nombre completo</td>
-                                        <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "No tiene perfil Docente";?></td>
+                                        <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?></td>
                                     </tr>
                                     <tr>
                                         <td>Cedula</td>
@@ -100,7 +100,31 @@
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <!-- Modal -->
+    <div class="modal fade" id="new_docente" tabindex="-1" role="dialog" aria-labelledby="new_docenteLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="new_docenteLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="http://localhost:8000/docentes/create" method="post">
+                <input type="hidden" name="id" value=<?php echo '"'.$data['users']['id'].'"';?>>
+                <input type="hidden" name="nombre" value=<?php echo '"'.$data['users']['name'].'"';?>>
+                <input type="hidden" name="cedula" value=<?php echo '"'.$data['users']['cedula'].'"';?>>
+                <h3>Esta seguro que desea crearle a <strong><?php echo $data['users']['name'];?></strong> un perfil de Docente?</h3>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
     </body>
 
     </html>
