@@ -11,10 +11,11 @@ class administrativos extends controller{
 		require_once("../app/models/administrativo.php");
 		$this->autenticate();
 		$administrativo=new Administrativo();
-		$administrativo=$administrativo->where("id",$id);
-		 
+		$titles= $administrativo->titulos($id);
+		$administrativos=$administrativo->where("id",$id);
+		$administrativos=$administrativos[0];
 		//Llamada a la vista
-		$this->view('administrativos/show', ['administrativo' => $administrativo]);
+		$this->view('administrativos/show', ['administrativo' => $administrativos, 'titles' => $titles]);
 	}
 	
 	public function edit($id = ''){
@@ -43,6 +44,22 @@ class administrativos extends controller{
 		header("Location: http://localhost:8000/usuarios/show/$user_id");
 		exit;
 		$this->view('administrativos/index', []);
+	}
+
+	public function add_titulo(){
+		$this->autenticate();
+		$titulo = "'".$_POST['titulo']."'";
+		$year = "'".$_POST['year']."'";
+		$institucion = "'".$_POST['universidad']."'";
+		$grado = "'".$_POST['grado']."'";
+		$administrativos_id = $_POST['administrativos_id'];
+		require_once("../app/models/administrativo.php");
+		$administrativo=new Administrativo();
+		$administrativo->new_titulo($titulo,$year,$institucion,$grado,$administrativos_id);
+		$administrativo = strval($administrativos_id);
+		header("Location: http://localhost:8000/administrativos/show/$administrativos_id");
+		exit;
+		$this->view('docentes/index', []);
 	}
 }
 ?>
