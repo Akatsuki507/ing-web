@@ -178,7 +178,7 @@
                         <div class="card-header">
                         	<div class="row">
 	                        	<div class="col-8">
-	                        		<h5 class="card-tittle my-2">Preparacion academica</h5>
+	                        		<h5 class="card-tittle my-2">Familiares</h5>
 	                        	</div>
 	                        	<div class="col-4">
 	                        		<a href="#" data-toggle='modal' data-target='#new_familia'>Agregar Familiar <i class="fas fa-user-plus"></i></a>
@@ -188,21 +188,26 @@
                         <div class="table-responsive">
                             <table class="table table-striped">
                             	<thead>
-                            		<th>Titulo</th>
-                            		<th>Anho</th>
-                            		<th>Institucion</th>
-                            		<th>Grado</th>
+                            		<th>Nombre</th>
+                            		<th>Localizar emergencia</th>
+                            		<th>Prioridad al localizar</th>
+                            		<th>Parentesco</th>
+                            		<th>Fecha de Nacimiento</th>
+                            		<th>Telefono</th>
+                            		<th>correo</th>
                             	</thead>
                                 <tbody>
                                 	<?php 
-                                	foreach ($data['titles'] as $titulo) {
+                                	foreach ($data['familiares'] as $familiar) {
                                 		echo'
                                 		<tr>
-	                                		<td>'.$titulo["nombre"].'</td>
-	                                		<td>'.$titulo["year"].'</td>
-	                                		<td>'.$titulo["universidad"].'</td>
-	                                		<td>'.$titulo["grado"].'</td>
-	                                		<td>'.$titulo["docentes_id"].'</td>
+	                                		<td>'.$familiar["nombre"].'</td>
+	                                		<td>'.$familiar["localizar_emergencia"].'</td>
+	                                		<td>'.$familiar["prioridad_localizar"].'</td>
+	                                		<td>'.$familiar["parentesco"].'</td>
+	                                		<td>'.$familiar["fecha_nacimiento"].'</td>
+	                                		<td>'.$familiar["telefono"].'</td>
+	                                		<td>'.$familiar["correo"].'</td>
                                 		';
                                 	} 
                                 	?>

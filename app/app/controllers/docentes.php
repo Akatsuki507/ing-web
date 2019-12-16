@@ -13,9 +13,10 @@ class docentes extends controller{
 		require_once("../app/models/docente.php");
 		$docente=new Docente();
 		$titles= $docente->titulos($id);
+		$familiares= $docente->familiares($id);
 		$docentes=$docente->where("id",$id);
 		$docentes=$docentes[0];
-		$this->view('docentes/show', ['docente' => $docentes, 'titles' => $titles, 'el_id' => $id]);
+		$this->view('docentes/show', ['docente' => $docentes, 'titles' => $titles, 'familiares' => $familiares]);
 	}
 
 	public function edit($id = ''){
@@ -66,7 +67,7 @@ class docentes extends controller{
 		$this->autenticate();
 		$nombre = "'".$_POST['nombre']."'";
 		$localizar_emergencia = "'".$_POST['localizar_emergencia']."'";
-		$prioridad_localizar = "'".$_POST['prioridad_localizar']."'";
+		$prioridad_localizar = $_POST['prioridad_localizar'];
 		$parentesco = "'".$_POST['parentesco']."'";
 		$fecha_nacimiento = "'".$_POST['fecha_nacimiento']."'";
 		$telefono = "'".$_POST['telefono']."'";

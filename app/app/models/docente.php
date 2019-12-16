@@ -36,13 +36,13 @@ class Docente extends Model{
 
     public function new_familiar($nombre,$localizar_emergencia,$prioridad_localizar,$parentesco,$fecha_nacimiento,$telefono,$correo,$docente_id){
         $this->rows = null;
-        $consulta=$this->db->query("insert into famila_docente (nombre ,localizar_emergencia , prioridad_localizar , parentesco , fecha_nacimiento , telefono , correo , docentes_id) values ($nombre ,$localizar_emergencia ,$prioridad_localizar ,$parentesco ,$fecha_nacimiento ,$telefono , $correo, $docente_id);");
+        $consulta=$this->db->query("insert into famila_docentes (nombre ,localizar_emergencia , prioridad_localizar , parentesco , fecha_nacimiento , telefono , correo , docentes_id) values ($nombre ,$localizar_emergencia ,$prioridad_localizar ,$parentesco ,$fecha_nacimiento ,$telefono , $correo, $docente_id);");
         return true;
     }
 
     public function familiares($id){
         $this->rows = null;
-        $consulta=$this->db->query("select * from famila_docente where docentes_id = $id;");
+        $consulta=$this->db->query("select * from famila_docentes where docentes_id = $id;");
         while($filas=$consulta->fetch_assoc()){
             $this->rows[]=$filas;
         }
