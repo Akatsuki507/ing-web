@@ -2,7 +2,10 @@
 class docentes extends controller{
 	public function index(){
 		$this->autenticate();
-		$this->view('docentes/index', []);
+		require_once '../app/models/docente.php';
+		$docente=new Docente();
+		$docente=$docente->all();
+		$this->view('docentes/index', ['docente' => $docente]);
 	}
 
 	public function show(){
