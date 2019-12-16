@@ -49,14 +49,14 @@ class docentes extends controller{
 
 	public function add_titulo(){
 		$this->autenticate();
-		$titulo = "'".$_POST['nombre']."'";
+		$titulo = "'".$_POST['titulo']."'";
 		$year = "'".$_POST['year']."'";
 		$institucion = "'".$_POST['universidad']."'";
 		$grado = "'".$_POST['grado']."'";
 		$docente_id = $_POST['docente_id'];
 		require_once("../app/models/docente.php");
 		$docente=new Docente();
-		$docente->new_titulo($titulo,$year,$institucion,$grado,$docente_id); // crea el perfil docente
+		$docente->new_titulo($titulo,$year,$institucion,$grado,$docente_id);
 		$docente_id = strval($docente_id);
 		header("Location: http://localhost:8000/docentes/show/$docente_id");
 		exit;

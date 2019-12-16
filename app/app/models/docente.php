@@ -18,7 +18,7 @@ class Docente extends Model{
     }
 
     public function new_titulo($titulo,$year,$institucion,$grado,$docente_id){
-        $consulta=$this->db->query("insert into preparacion_docente(nombre , year , universidad , grado , docente_id) values ($titulo , $year, $institucion ,$grado , $docente_id);");
+        $consulta=$this->db->query("insert into preparacion_docente (nombre , year , universidad , grado , docentes_id) values ($titulo , $year, $institucion ,$grado , $docente_id);");
         return true;
     }
 }
