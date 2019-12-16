@@ -112,9 +112,9 @@
           </div>
           <div class="modal-body">
             <form action="http://localhost:8000/docentes/create" method="post">
-                <input type="hidden" name="id" value=<?php echo '"'.$data['users']['id'].'"';?>>
-                <input type="hidden" name="nombre" value=<?php echo '"'.$data['users']['name'].'"';?>>
-                <input type="hidden" name="cedula" value=<?php echo '"'.$data['users']['cedula'].'"';?>>
+                <input type="hidden" name="id" required="true" value=<?php echo '"'.$data['users']['id'].'"';?>>
+                <input type="hidden" name="nombre" required="true" value=<?php echo '"'.$data['users']['name'].'"';?>>
+                <input type="hidden" name="cedula" required="true" value=<?php echo '"'.$data['users']['cedula'].'"';?>>
                 <h3>Esta seguro que desea crearle a <strong><?php echo $data['users']['name'];?></strong> un perfil de Docente?</h3>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -137,9 +137,9 @@
           </div>
           <div class="modal-body">
             <form action="http://localhost:8000/administrativos/create" method="post">
-                <input type="hidden" name="id" value=<?php echo '"'.$data['users']['id'].'"';?>>
-                <input type="hidden" name="nombre" value=<?php echo '"'.$data['users']['name'].'"';?>>
-                <input type="hidden" name="cedula" value=<?php echo '"'.$data['users']['cedula'].'"';?>>
+                <input type="hidden" name="id" required="true" value=<?php echo '"'.$data['users']['id'].'"';?>>
+                <input type="hidden" name="nombre" required="true" value=<?php echo '"'.$data['users']['name'].'"';?>>
+                <input type="hidden" name="cedula" required="true" value=<?php echo '"'.$data['users']['cedula'].'"';?>>
                 <h3>Esta seguro que desea crearle a <strong><?php echo $data['users']['name'];?></strong> un perfil de Administrativo?</h3>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
