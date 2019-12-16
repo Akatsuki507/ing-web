@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
+        <!--La "cabeza" de la pagina, es su titulo, el php incluido es para que incluya detalles del boostrap  -->
         <meta charset="UTF-8" />
         <title>Usuarios</title>
         <?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
     </head>
     <body>
+        <!-- Muestra los datos del usuario que estan guardados en la base de datos, aparte de usar las galletas para  que la conexion con la pagina sea estable-->
         <?php include '/var/www/app/views/layouts/nav.php'; ?>
         <?php
             echo $data["nombre"]."<br/>";

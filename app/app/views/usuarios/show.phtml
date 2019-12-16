@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/d1fbf856e0.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
+    <!--El navbar, es como el menu principal que sale en todas las paginas, entonces se usa para que se pueda navegar en la aplicacion mas facilmente, se le conecta con el localhost -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
         <a class="navbar-brand" href="http://localhost:8000/usuarios"><i class="fas fa-arrow-left fa-2x"></i></a>
         <div class="container">
@@ -21,7 +21,7 @@
         </div>
     </nav>
 
-
+    <!--Para un mejor control, creamos el cuerpo a base de contenedores, que a su vez se dividen en otras secciones (row y column), tambien aparece navbar y tiene la misma funcion que la antes mencionada-->
     <div class="container">
 
         <!-- Jumbotron Header -->
@@ -42,6 +42,7 @@
                         <h5 class="card-tittle my-2">Informacion General</h5>
                     </div>
                     <div class="table-responsive">
+                        <!--Por razones de comodidad, mostramos los datos en forma de tablas -->
                         <table class="table table-striped">
                             <tbody>
                                 <tr>
@@ -66,6 +67,7 @@
                             <h5 class="card-tittle my-2">Perfiles</h5>
                         </div>
                         <div class="table-responsive">
+                            <!--Por razones de comodidad, mostramos los datos en forma de tablas -->
                             <table class="table table-striped">
                                 <tbody>
                                     <tr>
@@ -90,6 +92,7 @@
 
             <br>
     </div>
+    <!--Es el pie de pagina o lo ultimo que se muestra, lo usamos para declarar los derechos de autor de la pagina -->
         <footer class="py-4 bg-success footer fixed-bottom">  
             <div class="container-fluid">
                 <p class="m-0 text-center text-white">Copyright &copy; Universidad Tecnológica de Panamá</p>
