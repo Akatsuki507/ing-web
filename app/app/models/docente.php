@@ -21,5 +21,13 @@ class Docente extends Model{
         $consulta=$this->db->query("insert into preparacion_docente (nombre , year , universidad , grado , docentes_id) values ($titulo , $year, $institucion ,$grado , $docente_id);");
         return true;
     }
+
+    public function titulos($id){
+        $consulta=$this->db->query("select * from preparacion_docente where docentes_id = $id;");
+        while($filas=$consulta->fetch_assoc()){
+            $this->rows[]=$filas;
+        }
+        return $this->rows;
+    }
 }
 ?>
