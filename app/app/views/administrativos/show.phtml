@@ -156,19 +156,28 @@
 	                            	</thead>
 	                                <tbody>
 	                                	<?php 
-	                                	foreach ($data['titles'] as $titulo) {
-	                                		echo'
-	                                		<tr>
-		                                		<td>'.$titulo["nombre"].'</td>
-		                                		<td>'.$titulo["year"].'</td>
-		                                		<td>'.$titulo["universidad"].'</td>
-		                                		<td>'.$titulo["grado"].'</td>
-	                                		';
-	                                	} 
+	                                	if ($data['titles'] != null) {
+		                                	foreach ($data['titles'] as $titulo) {
+		                                		echo'
+		                                		<tr>
+			                                		<td>'.$titulo["nombre"].'</td>
+			                                		<td>'.$titulo["year"].'</td>
+			                                		<td>'.$titulo["universidad"].'</td>
+			                                		<td>'.$titulo["grado"].'</td>
+		                                		';
+		                                	} 
+	                                	}
 	                                	?>
 	                                </tbody>
 	                                
 	                            </table>
+	                        	<?php  
+	                        		if ($data['titles'] == null) {
+	                            		echo "
+	                            			<h2>No tiene Titulos Registrados</h2>
+	                            		";
+	                        		}
+	                        	?>
 	                        </div>
 	                        
 	                    </div>
@@ -198,22 +207,30 @@
 	                            	</thead>
 	                                <tbody>
 	                                	<?php 
-	                                	foreach ($data['familiares'] as $familiar) {
-	                                		echo'
-	                                		<tr>
-		                                		<td>'.$familiar["nombre"].'</td>
-		                                		<td>'.$familiar["localizar_emergencia"].'</td>
-		                                		<td>'.$familiar["prioridad_localizar"].'</td>
-		                                		<td>'.$familiar["parentesco"].'</td>
-		                                		<td>'.$familiar["fecha_nacimiento"].'</td>
-		                                		<td>'.$familiar["telefono"].'</td>
-		                                		<td>'.$familiar["correo"].'</td>
-	                                		';
-	                                	} 
+	                                	if ($data['familiares'] != null) {
+		                                	foreach ($data['familiares'] as $familiar) {
+		                                		echo'
+		                                		<tr>
+			                                		<td>'.$familiar["nombre"].'</td>
+			                                		<td>'.$familiar["localizar_emergencia"].'</td>
+			                                		<td>'.$familiar["prioridad_localizar"].'</td>
+			                                		<td>'.$familiar["parentesco"].'</td>
+			                                		<td>'.$familiar["fecha_nacimiento"].'</td>
+			                                		<td>'.$familiar["telefono"].'</td>
+			                                		<td>'.$familiar["correo"].'</td>
+		                                		';
+		                                	} 
+	                                	}
 	                                	?>
 	                                </tbody>
-	                                
 	                            </table>
+	                        	<?php  
+	                        		if ($data['familiares'] == null) {
+	                            		echo "
+	                            			<h2>No tiene Familiares Registrados</h2>
+	                            		";
+	                        		}
+	                        	?>
 	                        </div>
 	                        
 	                    </div>
