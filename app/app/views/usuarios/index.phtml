@@ -1,62 +1,67 @@
-   </head>
-    <body>
-        <?php include '/var/www/app/views/layouts/nav.php'; ?>
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Usuarios</title>
         <?php include '/var/www/app/views/layouts/bootstrap.php'; ?>
-        <div class="row justify-content-md-center">  
-                <div class="col-lg-3 col-md-6 mb-4 p-5">
-                    <div class="row justify-content-md-center" align="center">
-                        <div class="my-auto">
-                            <img src="https://ayudawp.com/wp-content/uploads/2014/02/usuario-registrado.jpg"style="width:80px;height:80px"align="left">
-                        </div>
-                        <div class="my-auto">
-                            <h4>Usuario</h4> 
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row justify-content-md-center" align="center">
-                        <form method="get" action="">
-                            <input type="search" name="" placeholder="Buscar Usuario">
-                            <input type="submit" value="Buscar" name="" class="btn btn-success"> 
-                        </form>
-                    </div>
-                </div>
-        </div>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css" integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="custom.css">
+        <script src="https://kit.fontawesome.com/d1fbf856e0.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top mb-5">
+            <a class="navbar-brand" href="http://localhost:8000/"><i class="fas fa-arrow-left fa-2x"></i></a>
+            <div class="container">
 
-        <div class="container" align="right">
-            <button type="button" class="btn btn-success">Crear Usuario</button>
-        </div><br>
-
-        <div class="container p-3" align="center">
+                <a class="navbar-brand" href="http://localhost:8000/">Gestión de Perfiles</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <br><br><br><br>
+        <div class="container pt-5" align="center">
+            
             <div class="row justify-content-center d-flex">
-                <div class="col-10 border border-success">
-                    <table class="table ">
-                        <thead>
-                        </thead>
-                        <tbody>
+                <div class="col-10 justify-content-end d-flex pb-5 " align="right">
+                    <button type="button" class="btn btn-success">Crear Usuario <i class="fas fa-plus"></i></button>
+                </div>
+                <br>
+                <div class="col-10 ">
+                    <div class="card table-sm">
+                        <div class="card-header">
+                            <h5 class="card-tittle my-2">Usuarios</h5>
+                        </div>
+                        <table class="table table-striped">
+                            <thead>
+                            </thead>
+                            <tbody>
 
-                                <?php
-                                    foreach ($data['users'] as $user) {
-                                        echo "<tr>";
-                                        echo "<td>".$user["name"];
-                                        echo "<td>".$user["cedula"];
-                                        if ($user["docentes_id"] == 0){
-                                            echo "<td>"."";
-                                        }else{
-                                            echo "<td>"."<a href='http://localhost:8000/docentes/show/".$user["docentes_id"]."' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>Perfil Docente</a>";
+                                    <?php
+                                        foreach ($data['users'] as $user) {
+                                            echo "<tr>";
+                                            echo "<td>".$user["name"];
+                                            echo "<td>".$user["cedula"];
+                                            if ($user["docentes_id"] == 0){
+                                                echo "<td>"."";
+                                            }else{
+                                                echo "<td>"."<a href='http://localhost:8000/docentes/show/".$user["docentes_id"]."' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>Perfil Docente</a>";
+                                            }
+                                            if($user["administrativos_id"] == 0){
+                                                echo "<td>"."";
+                                            }else{
+                                                echo "<td>"."<a href='http://localhost:8000/administrativos/show/".$user["administrativos_id"]."' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>Perfil Administrativo</a>";
+                                            }
+                                            echo "<td>"."<a href='http://localhost:8000/usuarios/show/".$user["id"]."' class='justify-content-center d-flex' role='button' aria-pressed='true'><i class='fas fa-eye fa-2x'></i></a>";
+                                            //echo "<td>"."<a href='#' class='btn btn-danger justify-content-center d-flex' role='button' aria-pressed='true'>borrar</a>"; //no creemos que estos datos se deban borrar pero por si acaso lo dejaremos aqui
                                         }
-                                        if($user["administrativos_id"] == 0){
-                                            echo "<td>"."";
-                                        }else{
-                                            echo "<td>"."<a href='http://localhost:8000/administrativos/show/".$user["administrativos_id"]."' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>Perfil Administrativo</a>";
-                                        }
-                                        echo "<td>"."<a href='http://localhost:8000/usuarios/show/".$user["id"]."' class='btn btn-primary justify-content-center d-flex' role='button' aria-pressed='true'>ver</a>";
-                                        //echo "<td>"."<a href='#' class='btn btn-danger justify-content-center d-flex' role='button' aria-pressed='true'>borrar</a>"; //no creemos que estos datos se deban borrar pero por si acaso lo dejaremos aqui
-                                    }
-                                ?>
+                                    ?>
 
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table> 
+                    </div>
+
                 </div>
             </div>
         </div>
