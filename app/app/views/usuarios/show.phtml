@@ -74,7 +74,7 @@
                                     </tr>
                                     <tr>
                                         <td>Cedula</td>
-                                        <td><?php echo ($data["users"]["administrativos_id"]) ? "<a href='http://localhost:8000/administrativos/show/".$data["users"]["docentes_id"]."'>Ver perfil Administrativo</a>" : "No tiene perfil Administrativo";?></td>
+                                        <td><?php echo ($data["users"]["administrativos_id"]) ? "<a href='http://localhost:8000/administrativos/show/".$data["users"]["docentes_id"]."'>Ver perfil Administrativo</a>" : "<a href='#' data-toggle='modal' data-target='#new_administrativo'>No tiene perfil Administrativo <i class='fas fa-user-plus'></i></a>";?></td>
                                     </tr>
                                 </tbody>
                                 
@@ -105,7 +105,7 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="new_docenteLabel">Modal title</h5>
+            <h5 class="modal-title" id="new_docenteLabel">Crear Perfil Docente</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -116,6 +116,31 @@
                 <input type="hidden" name="nombre" value=<?php echo '"'.$data['users']['name'].'"';?>>
                 <input type="hidden" name="cedula" value=<?php echo '"'.$data['users']['cedula'].'"';?>>
                 <h3>Esta seguro que desea crearle a <strong><?php echo $data['users']['name'];?></strong> un perfil de Docente?</h3>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Crear</button>
+                </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="new_administrativo" tabindex="-1" role="dialog" aria-labelledby="new_administrativoLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="new_administrativoLabel">Crear Perfil Administrativo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form action="http://localhost:8000/administrativos/create" method="post">
+                <input type="hidden" name="id" value=<?php echo '"'.$data['users']['id'].'"';?>>
+                <input type="hidden" name="nombre" value=<?php echo '"'.$data['users']['name'].'"';?>>
+                <input type="hidden" name="cedula" value=<?php echo '"'.$data['users']['cedula'].'"';?>>
+                <h3>Esta seguro que desea crearle a <strong><?php echo $data['users']['name'];?></strong> un perfil de Administrativo?</h3>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Crear</button>
