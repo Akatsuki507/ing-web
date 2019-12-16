@@ -17,7 +17,7 @@ class usuarios extends controller{
 		$this->autenticate();
 		$user=new Usuario();
 		$users=$user->where("id",$id);
-		 
+		$users=$users[0];
 		//Llamada a la vista
 		$this->view('usuarios/show', ['users' => $users]);
 	}
