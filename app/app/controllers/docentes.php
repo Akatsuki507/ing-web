@@ -31,7 +31,7 @@ class docentes extends controller{
 		$docente->new($nombre,$cedula,$nacimiento); // crea el perfil docente
 		$docente_id = $docente->where("cedula",$cedula); // se trae el perfil docente recien creado
 		$docente_id = $docente_id[0]["id"];
-		$docente->attach_user(1,$docente_id); // amarra el usuario a su nuevo perfil docente
+		$docente->attach_user($user_id,$docente_id); // amarra el usuario a su nuevo perfil docente
 		$user_id = strval($user_id);
 		header("Location: http://localhost:8000/usuarios/show/$user_id");
 		exit;
