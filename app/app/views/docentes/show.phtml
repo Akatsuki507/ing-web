@@ -173,6 +173,47 @@
                         
                     </div>
                 </div>
+                <div class="col-12 pt-5">
+                    <div class="card table-sm">
+                        <div class="card-header">
+                        	<div class="row">
+	                        	<div class="col-8">
+	                        		<h5 class="card-tittle my-2">Preparacion academica</h5>
+	                        	</div>
+	                        	<div class="col-4">
+	                        		<a href="#" data-toggle='modal' data-target='#new_familia'>Agregar Familiar <i class="fas fa-user-plus"></i></a>
+	                        	</div>
+                        	</div>
+                        </div>
+                        <div class="table-responsive">
+                            <table class="table table-striped">
+                            	<thead>
+                            		<th>Titulo</th>
+                            		<th>Anho</th>
+                            		<th>Institucion</th>
+                            		<th>Grado</th>
+                            	</thead>
+                                <tbody>
+                                	<?php 
+                                	foreach ($data['titles'] as $titulo) {
+                                		echo'
+                                		<tr>
+	                                		<td>'.$titulo["nombre"].'</td>
+	                                		<td>'.$titulo["year"].'</td>
+	                                		<td>'.$titulo["universidad"].'</td>
+	                                		<td>'.$titulo["grado"].'</td>
+	                                		<td>'.$titulo["docentes_id"].'</td>
+                                		';
+                                	} 
+                                	?>
+                                </tbody>
+                                
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+
             </div>
         </div>
 		<!-- Page Features -->
@@ -397,6 +438,50 @@
 	                <input type="text" name="grado" class="form-control">
 
 	                <input type="hidden" name="docente_id" value=<?php echo '"'.$data['docente']['id'].'"';?>>
+
+	                <div class="modal-footer">
+	                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+	                    <button type="submit" class="btn btn-primary">Crear</button>
+	                </div>
+	            </form>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+
+	    <div class="modal fade" id="new_familia" tabindex="-1" role="dialog" aria-labelledby="new_familiaLabel" aria-hidden="true">
+	      <div class="modal-dialog" role="document">
+	        <div class="modal-content">
+	          <div class="modal-header">
+	            <h5 class="modal-title" id="new_familiaLabel">Agregar Familiar</h5>
+	            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	              <span aria-hidden="true">&times;</span>
+	            </button>
+	          </div>
+	          <div class="modal-body">
+	            <form action="http://localhost:8000/docentes/add_familiar" method="post">
+	            	<label>Nombre</label>
+	                <input type="text" name="nombre" class="form-control" required="true">
+
+	                <label>Localizar emergencia</label>
+	                <input type="text" name="localizar_emergiencia" class="form-control" required="true">
+
+	                <label>Prioridad al localizar</label>
+	                <input type="number" name="prioridad_localizar" class="form-control" required="true">
+
+	                <label>Parentesco</label>
+	                <input type="text" name="parentesco" class="form-control" required="true">
+
+	                <label>Fecha de Nacimiento</label>
+	                <input type="text" name="fecha_nacimiento" class="form-control" required="true">
+
+	                <label>Telefono</label>
+	                <input type="text" name="telefono" class="form-control" required="true">
+
+	                <label>correo</label>
+	                <input type="text" name="correo" class="form-control" required="true">
+
+	                <input type="hidden" name="docente_id" required="true" value=<?php echo '"'.$data['docente']['id'].'"';?> >
 
 	                <div class="modal-footer">
 	                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

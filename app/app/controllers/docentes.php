@@ -61,5 +61,24 @@ class docentes extends controller{
 		exit;
 		$this->view('docentes/index', []);
 	}
+
+	public function add_familiar(){
+		$this->autenticate();
+		$nombre = "'".$_POST['nombre']."'";
+		$localizar_emergencia = "'".$_POST['localizar_emergencia']."'";
+		$prioridad_localizar = "'".$_POST['prioridad_localizar']."'";
+		$parentesco = "'".$_POST['parentesco']."'";
+		$fecha_nacimiento = "'".$_POST['fecha_nacimiento']."'";
+		$telefono = "'".$_POST['telefono']."'";
+		$correo = "'".$_POST['correo']."'";
+		$docente_id = $_POST['docente_id'];
+		require_once("../app/models/docente.php");
+		$docente=new Docente();
+		$docente->new_familiar($nombre,$localizar_emergencia,$prioridad_localizar,$parentesco,$fecha_nacimiento,$telefono,$correo,$docente_id);
+		$docente_id = strval($docente_id);
+		header("Location: http://localhost:8000/docentes/show/$docente_id");
+		exit;
+		$this->view('docentes/index', []);
+	}
 }
 ?>
