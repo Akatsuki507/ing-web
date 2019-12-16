@@ -154,13 +154,15 @@
                             		<th>Grado</th>
                             	</thead>
                                 <tbody>
-                                	<?php foreach ($data['titulos'] as $titulo) {
+                                	<?php 
+                                	foreach ($data['titles'] as $titulo) {
                                 		echo'
                                 		<tr>
-	                                		<td>'.$titulo.'</td>
-	                                		<td>'.$titulo.'</td>
-	                                		<td>'.$titulo.'</td>
-	                                		<td>'.$titulo.'</td>
+	                                		<td>'.$titulo["nombre"].'</td>
+	                                		<td>'.$titulo["year"].'</td>
+	                                		<td>'.$titulo["universidad"].'</td>
+	                                		<td>'.$titulo["grado"].'</td>
+	                                		<td>'.$titulo["docentes_id"].'</td>
                                 		';
                                 	} 
                                 	?>
@@ -390,7 +392,7 @@
 
 	                <label>Institucion</label>
 	                <input type="text" name="universidad" class="form-control">
-	                
+
 	                <label>Grado</label>
 	                <input type="text" name="grado" class="form-control">
 

@@ -13,10 +13,10 @@ class docentes extends controller{
 		require_once("../app/models/docente.php");
 		
 		$docente=new Docente();
-		$titulos= ["Provisional","Provisional","Provisional","Provisional"];
+		$titles= $docente->titulos("id",$id);
 		$docentes=$docente->where("id",$id);
 		$docentes=$docentes[0];
-		$this->view('docentes/show', ['docente' => $docentes, 'titulos' => $titulos]);
+		$this->view('docentes/show', ['docente' => $docentes, 'titles' => $titles]);
 	}
 
 	public function edit($id = ''){
