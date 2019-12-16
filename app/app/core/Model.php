@@ -9,6 +9,7 @@ class Model{
         $this->rows=array();
     }
     public function all(){
+        $this->rows = null;
         $consulta=$this->db->query("select * from {$this->table};");
         while($filas=$consulta->fetch_assoc()){
             $this->rows[]=$filas;
@@ -16,6 +17,7 @@ class Model{
         return $this->rows;
     }
     public function where($col, $data){
+        $this->rows = null;
         $consulta=$this->db->query("select * from {$this->table} where $col = $data;");
         while($filas=$consulta->fetch_assoc()){
             $this->rows[]=$filas;

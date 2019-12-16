@@ -12,8 +12,7 @@ class docentes extends controller{
 		$this->autenticate();
 		require_once("../app/models/docente.php");
 		$docente=new Docente();
-		$title=new Docente();
-		$titles= $title->titulos($id);
+		$titles= $docente->titulos($id);
 		$docentes=$docente->where("id",$id);
 		$docentes=$docentes[0];
 		$this->view('docentes/show', ['docente' => $docentes, 'titles' => $titles, 'el_id' => $id]);
