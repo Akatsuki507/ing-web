@@ -157,14 +157,16 @@
                             		<th>Grado</th>
                             	</thead>
                                 <tbody>
-                                    <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?>
-                                    </td>
-                                    <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?>
-                                    </td>
-                                    <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?>
-                                    </td>
-                                    <td><?php echo ($data["users"]["docentes_id"]) ? "<a href='http://localhost:8000/docentes/show/".$data["users"]["docentes_id"]."'>Ver perfil docente</a>" : "<a href='#' data-toggle='modal' data-target='#new_docente'>No tiene perfil Docente <i class='fas fa-user-plus'></i></a>";?>
-                                    </td>
+                                	<?php foreach ($data['titulos'] as $titulo) {
+                                		echo'
+                                		<tr>
+	                                		<td>'.$titulo.'</td>
+	                                		<td>'.$titulo.'</td>
+	                                		<td>'.$titulo.'</td>
+	                                		<td>'.$titulo.'</td>
+                                		';
+                                	} 
+                                	?>
                                 </tbody>
                                 
                             </table>
