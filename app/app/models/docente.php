@@ -48,5 +48,11 @@ class Docente extends Model{
         }
         return $this->rows;
     }
+
+    public function update($id,$nombre,$fecha_nacimiento,$genero,$tipo_sangre,$estado_civil,$peso,$estatura,$provincia,$distrito,$corregimiento,$direccion,$telefono,$correo,$sede,$categoria,$departamento,$apartado_postal,$cargo,$representante_gobierno,$unidad){
+        $this->rows = null;
+        $consulta=$this->db->query("update docentes set nombre = $nombre, fecha_nacimiento = $fecha_nacimiento,genero = $genero,tipo_sangre = $tipo_sangre,estado_civil = $estado_civil,peso = $peso,estatura = $estatura,provincia = $provincia,distrito = $distrito,corregimiento = $corregimiento,direccion = $direccion,telefono = $telefono,correo = $correo,sede = $sede,categoria = $categoria,departamento = $departamento,apartado_postal = $apartado_postal,cargo = $cargo,representante_gobierno = $representante_gobierno,unidad = $unidad where id = $id;");
+        return true;
+    }
 }
 ?>
