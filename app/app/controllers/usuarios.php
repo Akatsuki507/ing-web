@@ -77,7 +77,7 @@ class usuarios extends controller{
 		if($verify){
 			$current_user = $user->get_current_user($cedula,$pass);
 			$id = strval($current_user[0]["id"]);
-			setcookie("id_user_sesion_kawaii", $id ,time() + 120, "/"); //Le da al usuario el tiempo en que puede estar en sesion
+			setcookie("id_user_sesion_kawaii", $id ,time() + 3600, "/"); //Le da al usuario el tiempo en que puede estar en sesion, 3600 es 1 hora
 			header("Location: http://localhost:8000/");
 		}else{
 			//redirige al login si el usuario no existe

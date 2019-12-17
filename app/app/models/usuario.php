@@ -12,9 +12,9 @@ class Usuario extends Model{
         return true;
     }
     //sirve para confirmar que confirmar si un usuario y clave, pertenecen a la base de datos y coinciden entre ellas
-    public function verify($user, $password){
+    public function verify($cedula, $password){
         $this->rows = null;
-        $consulta=$this->db->query("select * from {$this->table} where cedula = $user AND password = $password;");
+        $consulta=$this->db->query("select * from {$this->table} where cedula = $cedula AND password = $password;");
         while($filas=$consulta->fetch_assoc()){
             $this->rows[]=$filas;
         }

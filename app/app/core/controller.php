@@ -11,8 +11,8 @@ class controller{
 		$contenido = $_COOKIE["id_user_sesion_kawaii"]; 
 		if($contenido == null) {
 			//uncomment para usar login
-			//header("Location: http://localhost:8000/usuarios/login");
-			//exit;
+			header("Location: http://localhost:8000/usuarios/login");
+			exit;
 		}
 		
 	}
