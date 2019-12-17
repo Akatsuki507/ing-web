@@ -14,13 +14,13 @@ class administrativos extends controller{
 		$administrativo=new Administrativo();//crea una instancia
 		$titles= $administrativo->titulos($id); //Trae todos los titulos que posee un administrativo
 		$familiares= $administrativo->familiares($id); //Trae todos los familiares que posee un administrativo
-		$administrativos=$administrativo->where("id",$id);
+		$administrativos=$administrativo->where("id",$id);//busca el administrativo que tenga el id que buscas
 		$administrativos=$administrativos[0];
 		//Llamada a la vista
 		$this->view('administrativos/show', ['administrativo' => $administrativos, 'titles' => $titles, 'familiares' => $familiares]);
 	}
 
-	//Crea un nuevo perfil tipo usuario, se registra en la base de datos 
+	//Crea un nuevo perfil tipo administrativo, se registra en la base de datos 
 	public function create(){
 		$this->autenticate();
 		$user_id = $_POST['id'];
@@ -30,7 +30,7 @@ class administrativos extends controller{
 		require_once("../app/models/administrativo.php");//conexion entre los controladores
 		$administrativo=new Administrativo();// crea el perfil administrativo vacio
 		$administrativo->new($nombre,$cedula,$nacimiento); // inserta la informacion antes ingresada en la base de datos
-		$administrativo_id = $administrativo->where("cedula",$cedula); // se trae el perfil administrativo recien creado
+		$administrativo_id = $administrativo->where("cedula",$cedula); // se trae el perfil administrativo recien creado con la cedula
 		$administrativo_id = $administrativo_id[0]["id"];
 		$administrativo->attach_user($user_id,$administrativo_id); // amarra el usuario a su nuevo perfil docente
 		$administrativo_id = strval($user_id);//convierte el user_id de entero a string
@@ -38,6 +38,7 @@ class administrativos extends controller{
 		exit;
 		$this->view('administrativos/index', []);
 	}
+	
 	//sirve para agregar un titulo al perfil de administrativo
 	public function add_titulo(){
 		$this->autenticate(); //verifica si el usuario este ingresado al sistema
