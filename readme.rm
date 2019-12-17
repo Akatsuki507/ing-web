@@ -2,3 +2,121 @@ PROYECTO DE INGENIERIA WEB
 UNIVERSIDAD TECNOLOGICA DE PANAMA
 
 SISTEMA DE GESTION DE PROCESOS PARA LA SECRETARIA ACADEMICA DE LA FACULTAD DE SISTEMAS COMPUTACIONALES
+
+
+# SISTEMA DE GESTION DE PROCESOS PARA LA SECRETARIA ACADEMICA DE LA FACULTAD DE SISTEMAS COMPUTACIONALES
+
+One Paragraph of project description goes here
+
+## Getting Started
+
+Primero se requiere de clonar el repositorio
+
+```
+git clone https://github.com/Akatsuki507/ing-web.git
+```
+
+
+### Prerequisitos
+
+Debe de contar con docker y docker-compose.
+
+```
+sudo apt install docker
+```
+o * [puede seguir esta guia de instalacion de docker](https://www.digitalocean.com/community/tutorials/como-instalar-y-usar-docker-en-ubuntu-18-04-1-es) - Docker
+
+Pasos para instalar docker-compose:
+
+1. Ejecute este comando para descargar la versión estable actual de Docker Compose:
+```
+sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+2. Aplique permisos ejecutables al binario:
+
+```
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+Nota: Si el comando docker-compose falla después de la instalación, verifique su ruta. También puede crear un enlace simbólico a / usr / bin o cualquier otro directorio en su ruta.
+
+```
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+
+para probar la instalacion
+```
+$ docker-compose --version
+```
+
+### Installing
+
+A step by step series of examples that tell you how to get a development env running
+
+Say what the step will be
+
+```
+Give the example
+```
+
+And repeat
+
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Running the tests
+
+Explain how to run the automated tests for this system
+
+### Break down into end to end tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+### And coding style tests
+
+Explain what these tests test and why
+
+```
+Give an example
+```
+
+## Deployment
+
+Add additional notes about how to deploy this on a live system
+
+## Built With
+
+* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
+* [Maven](https://maven.apache.org/) - Dependency Management
+* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+## Authors
+
+* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+
+See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+* Hat tip to anyone whose code was used
+* Inspiration
+* etc
