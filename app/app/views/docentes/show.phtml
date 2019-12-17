@@ -349,68 +349,69 @@
 	            </button>
 	          </div>
 	          <div class="modal-body">
-	            <form action="http://localhost:8000/docentes/add_familiar" method="post">
+	            <form action="http://localhost:8000/docentes/update" method="post">
+	                <input type="hidden" name="id" required="true" value=<?php echo '"'.$data['docente']['id'].'"';?> >
+
 	            	<label>Nombre completo</label>
-	                <input type="text" name="nombre" class="form-control" required="true">
+	                <input type="text" name="nombre" class="form-control" required="true" value=<?php echo '"'.$data['docente']['nombre'].'"';?>>
 
 	                <label>Fecha de nacimiento</label>
-	                <input type="text" name="fecha_nacimiento" class="form-control" required="true">
+	                <input type="text" name="fecha_nacimiento" class="form-control" required="true" value=<?php echo '"'.$data['docente']['fecha_nacimiento'].'"';?>>
 
 	                <label>Genero</label>
-	                <input type="number" name="genero" class="form-control" required="true">
+	                <input type="text" name="genero" class="form-control" required="true" value=<?php echo '"'.$data['docente']['genero'].'"';?>>
 
 	                <label>Tipo de sangre</label>
-	                <input type="text" name="tipo_sangre" class="form-control" required="true">
+	                <input type="text" name="tipo_sangre" class="form-control" required="true" value=<?php echo '"'.$data['docente']['tipo_sangre'].'"';?>>
 
 	                <label>Estado civil</label>
-	                <input type="text" name="estado_civil" class="form-control" required="true">
+	                <input type="text" name="estado_civil" class="form-control" required="true" value=<?php echo '"'.$data['docente']['estado_civil'].'"';?>>
 
 	                <label>Peso</label>
-	                <input type="text" name="peso" class="form-control" required="true">
+	                <input type="number" name="peso" class="form-control" required="true" value=<?php echo '"'.$data['docente']['peso'].'"';?>>
 
 	                <label>Estatura</label>
-	                <input type="text" name="estatura" class="form-control" required="true">
+	                <input type="number" name="estatura" class="form-control" required="true" value=<?php echo '"'.$data['docente']['estatura'].'"';?>>
 
 	                <label>Provincia</label>
-	                <input type="text" name="provincia" class="form-control" required="true">
+	                <input type="text" name="provincia" class="form-control" required="true" value=<?php echo '"'.$data['docente']['provincia'].'"';?>>
 
 	                <label>Distrito</label>
-	                <input type="text" name="distrito" class="form-control" required="true">
+	                <input type="text" name="distrito" class="form-control" required="true" value=<?php echo '"'.$data['docente']['distrito'].'"';?>>
 
 	                <label>Corregimiento</label>
-	                <input type="text" name="corregimiento" class="form-control" required="true">
+	                <input type="text" name="corregimiento" class="form-control" required="true" value=<?php echo '"'.$data['docente']['corregimiento'].'"';?>>
 
 	                <label>Direccion</label>
-	                <input type="text" name="parentesco" class="form-control" required="true">
+	                <input type="text" name="direccion" class="form-control" required="true" value=<?php echo '"'.$data['docente']['direccion'].'"';?>>
 
 	                <label>Telefono</label>
-	                <input type="text" name="telefono" class="form-control" required="true">
+	                <input type="text" name="telefono" class="form-control" required="true" value=<?php echo '"'.$data['docente']['telefono'].'"';?>>
 
 	                <label>Correo</label>
-	                <input type="text" name="correo" class="form-control" required="true">
+	                <input type="text" name="correo" class="form-control" required="true" value=<?php echo '"'.$data['docente']['correo'].'"';?>>
 
 	                <label>Sede</label>
-	                <input type="text" name="sede" class="form-control" required="true">
+	                <input type="text" name="sede" class="form-control" required="true" value=<?php echo '"'.$data['docente']['sede'].'"';?>>
 
 	                <label>Categoria</label>
-	                <input type="text" name="categoria" class="form-control" required="true">
+	                <input type="text" name="categoria" class="form-control" required="true" value=<?php echo '"'.$data['docente']['categoria'].'"';?>>
 
 	                <label>Departamento</label>
-	                <input type="text" name="departamento" class="form-control" required="true">
+	                <input type="text" name="departamento" class="form-control" required="true" value=<?php echo '"'.$data['docente']['departamento'].'"';?>>
 
 	                <label>Apartado postal</label>
-	                <input type="text" name="apartado_postal" class="form-control" required="true">
+	                <input type="text" name="apartado_postal" class="form-control" required="true" value=<?php echo '"'.$data['docente']['apartado_postal'].'"';?>>
 
 	                <label>Cargo</label>
-	                <input type="text" name="cargo" class="form-control" required="true">
+	                <input type="text" name="cargo" class="form-control" required="true" value=<?php echo '"'.$data['docente']['cargo'].'"';?>>
 
 	                <label>Represante de gobierno</label>
-	                <input type="text" name="telefono" class="form-control" required="true">
+	                <input type="text" name="representante_gobierno" class="form-control" required="true" value=<?php echo '"'.$data['docente']['representante_gobierno'].'"';?>>
 
 	                <label>Unidad</label>
-	                <input type="text" name="representante_gobierno" class="form-control" required="true">
-
-	                <input type="hidden" name="docente_id" required="true" value=<?php echo '"'.$data['docente']['id'].'"';?> >
+	                <input type="text" name="unidad" class="form-control" required="true" value=<?php echo '"'.$data['docente']['unidad'].'"';?>>
+docente
 
 	                <div class="modal-footer">
 	                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

@@ -82,5 +82,39 @@ class administrativos extends controller{
 		exit;
 		$this->view('administrativos/index', []);
 	}
+
+	public function update(){
+		$this->autenticate();
+		$id = $_POST['id'];
+		$nombre = "'".$_POST['nombre']."'";
+		$fecha_nacimiento = "'".$_POST['fecha_nacimiento']."'";
+		$genero = $_POST['genero'];
+		$tipo_sangre = "'".$_POST['tipo_sangre']."'";
+		$estado_civil = "'".$_POST['estado_civil']."'";
+		$peso = "'".$_POST['peso']."'";
+		$estatura = "'".$_POST['estatura']."'";
+		$provincia = $_POST['provincia'];
+		$distrito = "'".$_POST['distrito']."'";
+		$corregimiento = "'".$_POST['corregimiento']."'";
+		$direccion = $_POST['direccion'];
+		$telefono = "'".$_POST['telefono']."'";
+		$correo = "'".$_POST['correo']."'";
+		$sede = $_POST['sede'];
+		$categoria = "'".$_POST['categoria']."'";
+		$departamento = "'".$_POST['departamento']."'";
+		$apartado_postal = "'".$_POST['apartado_postal']."'";
+		$cargo = $_POST['cargo'];
+		$representante_gobierno = "'".$_POST['representante_gobierno']."'";
+		$unidad = "'".$_POST['unidad']."'";
+		require_once("../app/models/administrativo.php");
+		$administrativo=new Administrativo();
+		$administrativo->new_familiar($id,$nombre,$fecha_nacimiento,$genero,$tipo_sangre,$estado_civil,$peso,$estatura,$provincia,$distrito,$corregimiento,$direccion,$telefono,$correo,$sede,$categoria,$departamento,$apartado_postal,$cargo,$representante_gobierno,$unidad);
+		$id = strval($id);
+		header("Location: http://localhost:8000/administrativos/show/$administrativo_id");
+		exit;
+		$this->view('administrativos/index', []);
+	}
+
+
 }
 ?>
