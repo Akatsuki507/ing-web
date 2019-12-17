@@ -3,8 +3,6 @@
 
 # SISTEMA DE GESTION DE PROCESOS PARA LA SECRETARIA ACADEMICA DE LA FACULTAD DE SISTEMAS COMPUTACIONALES
 
-One Paragraph of project description goes here
-
 ## Getting Started
 
 Puede o bien crear un fork o hacer un clon del repositorio
@@ -42,7 +40,7 @@ para probar la instalacion
 $ docker-compose --version
 ```
 
-### Instalacion
+### Instalación
 
 Para correr el proyecto solo necesita usar docker-compose
 
