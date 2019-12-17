@@ -122,19 +122,10 @@
 	                                    <td><?php echo $data["docente"]["apartado_postal"]; ?></td>
 	                                </tr>
 	                                <tr>
-	                                    <td>Cargo</td>
-	                                    <td><?php echo $data["docente"]["cargo"]; ?></td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Represante de gobierno</td>
-	                                    <td><?php echo $data["docente"]["representante_gobierno"]; ?></td>
-	                                </tr>
-	                                <tr>
-	                                    <td>Unidad</td>
-	                                    <td><?php echo $data["docente"]["unidad"]; ?></td>
+	                                    <td>Extension</td>
+	                                    <td><?php echo $data["docente"]["extension"]; ?></td>
 	                                </tr>
 	                            </tbody>
-	                            
 	                        </table>
 	                    </div>
 	                    
@@ -403,18 +394,12 @@
 	                <label>Apartado postal</label>
 	                <input type="text" name="apartado_postal" class="form-control" required="true" value=<?php echo '"'.$data['docente']['apartado_postal'].'"';?>>
 
-	                <label>Cargo</label>
-	                <input type="text" name="cargo" class="form-control" required="true" value=<?php echo '"'.$data['docente']['cargo'].'"';?>>
-
-	                <label>Represante de gobierno</label>
-	                <input type="text" name="representante_gobierno" class="form-control" required="true" value=<?php echo '"'.$data['docente']['representante_gobierno'].'"';?>>
-
-	                <label>Unidad</label>
-	                <input type="text" name="unidad" class="form-control" required="true" value=<?php echo '"'.$data['docente']['unidad'].'"';?>>
+	                <label>Extension</label>
+	                <input type="text" name="extension" class="form-control" required="true" value=<?php echo '"'.$data['docente']['extension'].'"';?>>
 
 	                <div class="modal-footer">
 	                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-	                    <button type="submit" class="btn btn-primary">Crear</button>
+	                    <button type="submit" class="btn btn-primary">Actualizar</button>
 	                </div>
 	            </form>
 	          </div>
