@@ -8,6 +8,7 @@ class controller{
 
 	//metodo que verifica si el usuario tiene una sesion activa, este metodo se llama desde casi todos los demas metodos
 	public function autenticate(){
+		//obtiene la cookie del navegador
 		$contenido = $_COOKIE["id_user_sesion_kawaii"]; 
 		if($contenido == null) {
 			//uncomment para usar login

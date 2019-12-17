@@ -76,6 +76,7 @@ class administrativos extends controller{
 		$this->view('administrativos/index', []);
 	}
 
+	//metodo que procesa la actualizacion
 	public function update(){
 		$this->autenticate();
 		$id = $_POST['id'];
